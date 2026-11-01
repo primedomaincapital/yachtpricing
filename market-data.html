@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yacht Pricing Data — YachtPricing.com</title>
+<meta name="description" content="Public figures on yacht brokerage sales values, average sale prices, and the size of the yacht market.">
+<link rel="canonical" href="https://yachtpricing.com/market-data">
+<meta property="og:title" content="Yacht Pricing Data — YachtPricing.com">
+<meta property="og:description" content="Public figures on yacht brokerage sales values, average sale prices, and the size of the yacht market.">
+<meta property="og:url" content="https://yachtpricing.com/market-data">
+<meta property="og:type" content="website">
+<style>
+:root{--mid:#060d16;--mid2:#0b1622;--plat:#d5dde5;--steel:#8fa1b3;--gold:#b9975b;--line:rgba(213,221,229,.14)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--mid);color:var(--plat);font-family:'Inter',sans-serif;overflow-x:hidden}
+.serif{font-family:'Marcellus',serif}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:20px 52px;background:rgba(6,13,22,.8);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+nav .brand{font-family:'Marcellus',serif;font-size:19px;letter-spacing:.1em}
+nav .brand span{color:var(--gold)}
+nav a.cta{font-size:12px;letter-spacing:.22em;text-transform:uppercase;background:var(--plat);color:var(--mid);text-decoration:none;padding:13px 30px;font-weight:700;transition:.3s}
+nav a.cta:hover{background:var(--gold);color:var(--mid)}
+.hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;overflow:hidden}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:.62}
+.hero-veil{position:absolute;inset:0;z-index:1;background:linear-gradient(to top,var(--mid) 8%,rgba(6,13,22,.28) 55%,rgba(6,13,22,.55))}
+.hero-inner{position:relative;z-index:2;padding:140px 52px 100px;max-width:1240px}
+.flag{font-size:11px;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);margin-bottom:28px}
+h1{font-family:'Marcellus',serif;font-size:clamp(48px,7.6vw,108px);line-height:1.04;margin-bottom:26px;max-width:940px}
+.lede{font-size:clamp(17px,2.1vw,21px);color:var(--steel);max-width:660px;line-height:1.72;margin-bottom:48px}
+.buyline{display:flex;align-items:center;gap:34px;flex-wrap:wrap}
+.price{font-family:'Marcellus',serif;font-size:46px}
+.price small{display:block;font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--steel);margin-top:8px}
+.btn{display:inline-block;background:var(--plat);color:var(--mid);text-decoration:none;padding:19px 56px;font-weight:700;font-size:15px;letter-spacing:.08em;transition:.3s}
+.btn:hover{background:var(--gold);transform:translateY(-3px);box-shadow:0 20px 50px rgba(185,151,91,.3)}
+section{padding:144px 52px;max-width:1240px;margin:0 auto}
+.k{font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);margin-bottom:24px}
+h2{font-family:'Marcellus',serif;font-size:clamp(34px,4.8vw,62px);line-height:1.12;margin-bottom:28px;max-width:860px}
+.body{color:var(--steel);font-size:18px;line-height:1.9;max-width:720px}
+.body strong{color:var(--plat)}
+.quote{font-family:'Marcellus',serif;font-size:clamp(26px,3.4vw,42px);line-height:1.4;text-align:center;max-width:900px;margin:70px auto;padding:0 20px}
+.quote span{color:var(--gold)}
+.band{margin-top:64px;position:relative;height:520px;overflow:hidden}
+.band img{width:100%;height:100%;object-fit:cover}
+.band .overlay{position:absolute;inset:0;background:linear-gradient(100deg,rgba(6,13,22,.88) 20%,transparent 60%);display:flex;align-items:center;padding:0 60px}
+.band .overlay div{max-width:480px}
+.band h3{font-family:'Marcellus',serif;font-size:34px;margin-bottom:16px}
+.band p{color:var(--steel);font-size:16px;line-height:1.8}
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:70px}
+.num{background:var(--mid2);padding:54px 34px;text-align:center}
+.num .v{font-family:'Marcellus',serif;font-size:50px;color:var(--plat)}
+.num .v span{color:var(--gold)}
+.num .d{color:var(--steel);font-size:14px;margin-top:14px;line-height:1.65}
+.tri{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:64px}
+.tri figure{overflow:hidden;position:relative;height:400px}
+.tri img{width:100%;height:100%;object-fit:cover;transition:transform .9s}
+.tri figure:hover img{transform:scale(1.07)}
+.tri figcaption{position:absolute;bottom:0;left:0;right:0;padding:24px;background:linear-gradient(transparent,rgba(6,13,22,.92));font-family:'Marcellus',serif;font-size:19px}
+.players{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:60px}
+.player{border:1px solid var(--line);padding:42px 34px;transition:.3s;background:var(--mid2)}
+.player:hover{border-color:var(--gold);transform:translateY(-6px)}
+.player h3{font-family:'Marcellus',serif;font-size:22px;margin-bottom:14px}
+.player h3 span{color:var(--gold)}
+.player p{color:var(--steel);font-size:15px;line-height:1.75}
+.final{text-align:center;border:1px solid var(--gold);padding:100px 40px;margin-top:40px;background:radial-gradient(ellipse at center,rgba(185,151,91,.1),transparent 70%)}
+.final .domain{font-family:'Marcellus',serif;font-size:clamp(30px,5vw,58px);margin-bottom:18px;word-break:break-all}
+footer{border-top:1px solid var(--line);padding:58px 44px;text-align:center;color:var(--steel);font-size:14px}
+footer a{color:var(--gold);text-decoration:none}
+.reveal{opacity:0;transform:translateY(38px);transition:opacity 1s ease,transform 1s ease}
+.reveal.in{opacity:1;transform:none}
+@media(max-width:900px){.nums,.tri,.players{grid-template-columns:1fr}section,.hero-inner{padding-left:24px;padding-right:24px}nav{padding:16px 20px}.band{height:640px}.band .overlay{padding:0 28px;align-items:flex-end;padding-bottom:50px}}
+.player .read{display:inline-block;margin-top:24px;color:var(--gold);text-decoration:none;font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;transition:.3s}
+.player .read:hover{color:var(--plat)}
+</style>
+<style>
+/* --- Market-data page additions (staged page only) --- */
+main.wrap{max-width:920px;margin:0 auto;padding:118px 20px 64px}
+main.wrap h1,main.wrap h2,main.wrap h3{overflow-wrap:break-word;word-break:break-word}
+main.wrap h1{font-size:clamp(30px,6vw,52px);line-height:1.12;margin:12px 0 10px}
+main.wrap h2{font-size:clamp(22px,4vw,30px);line-height:1.25;margin:44px 0 12px}
+main.wrap h3{font-size:19px;margin:26px 0 8px}
+main.wrap p,main.wrap li{font-size:17px;line-height:1.7;margin:0 0 14px}
+main.wrap ul{padding-left:22px}
+.stamp{display:inline-block;font-size:13px;letter-spacing:.14em;text-transform:uppercase;opacity:.85;border:1px solid rgba(255,255,255,.25);padding:8px 14px}
+.lede{font-size:19px;line-height:1.7;opacity:.92}
+.statgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin:22px 0}
+.stat{border:1px solid rgba(255,255,255,.22);padding:18px 20px}
+.stat b{display:block;font-size:30px;line-height:1.2;margin-bottom:6px;overflow-wrap:break-word}
+.stat span{font-size:15px;line-height:1.55;display:block}
+.figtable{width:100%;border-collapse:collapse;margin:18px 0 26px;font-size:16px}
+.figtable th,.figtable td{text-align:left;padding:11px 10px;border-bottom:1px solid rgba(255,255,255,.18);vertical-align:top;overflow-wrap:break-word}
+.figtable th{font-size:13px;letter-spacing:.1em;text-transform:uppercase;opacity:.85}
+.figtable td a,.stat a,main.wrap p a,main.wrap li a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+.src{font-size:14px;opacity:.85}
+.buybox{border:1px solid rgba(255,255,255,.3);padding:22px 24px;margin:36px 0}
+.buybox a{color:inherit}
+.buybox .price{font-size:30px;font-weight:700;display:block;margin:6px 0}
+.note{background:rgba(255,255,255,.06);border-left:3px solid rgba(255,255,255,.4);padding:16px 20px;margin:26px 0}
+.note p{font-size:15px}
+footer{padding:32px 20px;text-align:center;font-size:14px}
+footer a{color:inherit}
+@media(max-width:520px){main.wrap{padding-top:96px}nav{padding:16px 18px!important}.figtable{font-size:14px}.figtable th,.figtable td{padding:9px 6px}}
+
+/* Phase 1 assembly 2026-10-31 */
+@media (max-width:900px){h1{font-size:clamp(44px,11vw,72px)!important}}
+
+/* Phase 1 assembly 2026-10-31 — nav solid correction */
+@media (max-width:900px){nav{background:rgb(6,13,22)!important;backdrop-filter:none!important}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "yachtpricing.com market data",
+  "description": "Public figures on yacht brokerage sales values, average sale prices, and the size of the yacht market.",
+  "url": "https://yachtpricing.com/market-data",
+  "temporalCoverage": "2024/2026",
+  "creator": {
+    "@type": "Organization",
+    "name": "Prime Domain Capital"
+  },
+  "sourceOrganization": [
+    {
+      "@type": "Organization",
+      "url": "https://www.boatinternational.com/yachts/news/most-expensive-yacht-sales-2024"
+    },
+    {
+      "@type": "Organization",
+      "url": "https://www.boatinternational.com/boat-pro/superyacht-insight/brokerage-yacht-report-september-2025"
+    },
+    {
+      "@type": "Organization",
+      "url": "https://www.boatingnz.co.nz/2026/02/global-super-yacht-market-in-sustained-value-boom-with-new-zealand-reflecting-the-shift/"
+    }
+  ],
+  "dateModified": "2026-10-31",
+  "license": "https://creativecommons.org/licenses/by/4.0/"
+}
+</script>
+<style>
+/* Mobile rendering fix 2026-10-31: domain H1 lines, stacked nav, header clearance */
+@media (max-width:900px){
+main h1{overflow-wrap:normal!important;word-break:normal!important}
+nav:not(.toc){flex-direction:column!important;align-items:flex-start!important;gap:4px!important;padding-top:16px!important;padding-bottom:16px!important;padding-left:20px!important;padding-right:20px!important}
+.topbar{flex-direction:column!important;align-items:flex-start!important;gap:4px!important;padding-top:16px!important;padding-bottom:16px!important;padding-left:20px!important;padding-right:20px!important}
+main{padding-top:120px!important}
+main h1{font-size:clamp(30px,8.5vw,58px)!important;line-height:1.15!important}
+}
+</style>
+</head>
+<body>
+<nav><div class="brand">YACHT<span>PRICING</span></div><a class="cta" href="https://www.afternic.com/domain/yachtpricing.com">Buy Now · $19,888</a></nav>
+<main class="wrap">
+<span class="stamp">Last updated: October 31, 2026</span>
+<p class="src" style="margin-top:14px">Market data · Yacht prices by size and type, and brokerage market figures</p>
+<h1>The price tape for yachting</h1>
+
+<p class="lede">Yacht prices are negotiated in private and announced, if at all, as asking prices — which makes the monthly brokerage record the closest thing the market has to a price index. Read across a year of those months and the pattern is clear: fewer trophy sales at the very top, steady volume in the middle, and a market that rewards newer, larger, well-maintained yachts while older tonnage waits.</p>
+<h2>Headline figures</h2>
+<div class="statgrid">
+<div class="stat"><b>€711.9M</b><span>Combined value of the 10 most expensive superyacht sales of 2024, down 52.8% from €1.51 billion in 2023. <a class="src" href="https://www.boatinternational.com/yachts/news/most-expensive-yacht-sales-2024">Source: BOATPro data, via BOAT International</a></span><span class="trend" style="font-size:14px;opacity:.85;display:block;margin-top:8px">Trend: ▼ Down 52.8% vs 2023: €1.51 billion</span></div>
+<div class="stat"><b>€124.95M</b><span>Asking price of Phoenix 2, the 90-metre Lürssen that topped 2024's sales after 724 cumulative days on the market. <a class="src" href="https://www.boatinternational.com/yachts/news/most-expensive-yacht-sales-2024">Source: BOAT International</a></span><span class="trend" style="font-size:14px;opacity:.85;display:block;margin-top:8px">Trend: Baseline (October 2026) — trend tracking starts with the next refresh</span></div>
+<div class="stat"><b>€771.9M</b><span>Total brokerage sales value in September 2026 across 34 sales — an average of €22.7 million. <a class="src" href="https://itboat.com/en/articles/superyacht-brokerage-september-2026">Source: BOATPro, via BOAT International (September 2026 report)</a></span><span class="trend" style="font-size:14px;opacity:.85;display:block;margin-top:8px">Trend: Sales ▲ vs September 2025 (restated): 23; total value ▼ vs September 2025 (restated): €961.1M</span></div> <div class="stat"><b>€2.36B</b><span>Q3 2026 brokerage sales value across 126 sales, up 41.5% vs €1.67 billion in Q3 2025. <a class="src" href="https://itboat.com/en/articles/superyacht-brokerage-september-2026">Source: BOATPro monthly reports, via BOAT International</a></span><span class="trend" style="font-size:14px;opacity:.85;display:block;margin-top:8px">Trend: ▲ Up 41.5% vs Q3 2025: €1.67 billion</span></div> <div class="stat"><b>€961.1M</b><span>Total brokerage sales value in September 2025 across 23 sales — an average of €41.8 million (restated by BOATPro in its September 2026 report; first published as 22 sales / €940.7M / €42.8M average). <a class="src" href="https://www.boatinternational.com/boat-pro/superyacht-insight/brokerage-yacht-report-september-2025">Source: BOATPro, via BOAT International</a></span><span class="trend" style="font-size:14px;opacity:.85;display:block;margin-top:8px">Trend: Restated by BOATPro in its September 2026 report (first published: 22 sales / €940.7M / €42.8M)</span></div>
+<div class="stat"><b>$12.4B → $22.7B</b><span>Global Market Insights estimate for the yacht market, 2024 to 2034, a 6.4% CAGR. <a class="src" href="https://www.boatingnz.co.nz/2026/02/global-super-yacht-market-in-sustained-value-boom-with-new-zealand-reflecting-the-shift/">Source: Global Market Insights, via Boating NZ</a></span><span class="trend" style="font-size:14px;opacity:.85;display:block;margin-top:8px">Trend: ▲ Projected growth vs 2024: $12.4 billion (same Global Market Insights series)</span></div>
+</div>
+<p>Trend column: each figure is compared with its prior period from the same source, with the prior figure shown. Where no prior-period figure from the same source was available, the figure is labeled Baseline (October 2026) — trend tracking starts with the next refresh.</p><table class="figtable"><tr><th>Month</th><th>Sales (24m+)</th><th>Total value</th><th>Average</th><th>Source</th><th>Trend vs prior period</th></tr>
+<tr><td>August 2025</td><td>32</td><td>€405.1M</td><td>€12.7M</td><td><a href="https://www.boatinternational.com/boat-pro/superyacht-insight/brokerage-yacht-report-august-2025">BOATPro, via BOAT International</a></td><td>Baseline (October 2026) — trend tracking starts with the next refresh</td></tr>
+<tr><td>September 2025</td><td>22</td><td>€940.7M</td><td>€42.8M</td><td><a href="https://www.boatinternational.com/boat-pro/superyacht-insight/brokerage-yacht-report-september-2025">BOATPro, via BOAT International</a></td><td>Sales ▼ vs August 2025: 32; average ▲ vs August 2025: €12.7 million (same BOATPro monthly series)</td></tr>
+<tr><td>April 2026</td><td>41</td><td>€381M</td><td>€9.3M</td><td><a href="https://www.boatinternational.com/boat-pro/superyacht-insight/brokerage-report-yacht-sales-april-2026">BOATPro, via BOAT International</a></td><td>Baseline (October 2026) — trend tracking starts with the next refresh</td></tr>
+<tr><td>New listings, August 2025</td><td>87 yachts</td><td>€1.4B</td><td>€16.5M</td><td><a href="https://www.boatinternational.com/boat-pro/superyacht-insight/brokerage-yacht-report-august-2025">BOATPro, via BOAT International</a></td><td>Baseline (October 2026) — trend tracking starts with the next refresh</td></tr>
+</table>
+<p>Monthly averages swing wildly — €9.3 million one month, €42.8 million the next — because a single very large sale can double a month's total. That volatility is the point, not a flaw: it shows a thin market at the top where one transaction rewrites the average. Broader context from the same coverage puts 2025 brokerage sales at €7.5 billion, with total value holding firm even as transaction counts eased from pandemic highs, as buyers shifted toward larger, higher-specification vessels. <a class="src" href="https://www.boatingnz.co.nz/2026/02/global-super-yacht-market-in-sustained-value-boom-with-new-zealand-reflecting-the-shift/">Source: BOAT International figures, via Boating NZ</a></p>
+<div class="note"><h3>Methodology</h3><p>Included: BOATPro/BOAT International monthly brokerage reports for yachts of 24 metres and above, the 2024 top-sales review, and a published market-size estimate. Excluded: yachts under 24 metres (no verified aggregate this session), individual asking prices presented as sale prices (only Phoenix 2's asking price is shown, labeled as such), and any IYBA aggregate — none was verified this session. Asking prices are not sale prices; where a total is labeled a sales value, it follows BOATPro's convention.</p><p><strong>Disclaimer:</strong> Aggregated public estimates for information only, not investment or professional advice. Brokerage figures cover reported sales and may exclude off-market deals.</p></div>
+
+<div class="buybox">
+<span>This domain is for sale</span>
+<span class="price">Buy Now — $19,888</span>
+<p>Secure transfer via <a href="https://www.afternic.com/domain/yachtpricing.com">Afternic</a> &middot; Inquiries: <a href="mailto:info@primedomaincapital.com">info@primedomaincapital.com</a></p>
+</div>
+<h2>Changelog</h2>
+<ul>
+<li>October 2026: Initial edition — monthly brokerage sales, top sales, the market estimate, and new listings established; trend indicators added to every figure (prior-period figures shown where the same source publishes them; all other figures labeled Baseline (October 2026)).</li>
+<li><strong>October 31, 2026:</strong> BOATPro September 2026 added (34 sales, €771.9M, €22.7M average) and Q3 2026 aggregate (€2.36B, up 41.5%); September 2025 restated by BOATPro to 23 sales / €961.1M / €41.8M average.</li>
+</ul>
+</main>
+<footer><p>Offered by <strong>Prime Domain Capital</strong> &middot; Private holder of category-defining domains</p><p><a href="mailto:info@primedomaincapital.com">info@primedomaincapital.com</a></p></footer>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "1407571ec8bc45c3a082c91096558135"}'></script>
+<p class="back-home" style="display:block;text-align:center;padding:28px 16px;font-size:15px"><a href="https://yachtpricing.com/" style="color:inherit">&larr; Back to yachtpricing.com</a></p>
+</body>
+</html>
